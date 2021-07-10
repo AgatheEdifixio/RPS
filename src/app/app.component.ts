@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'rock-paper';
-  public computerResult: string | undefined; 
-  public result: string | undefined;
-  private userResult: string | undefined; 
+  public computerResult: any; 
+  public result: any;
+  public results = 0;
+  private userResult: any; 
 
  
 
@@ -26,33 +27,37 @@ export class AppComponent {
   }
 
   private calculateWinner():void {
-    console.log("USER choosed", this.userResult);
-    console.log("COMPUTER choosed", this.computerResult);
     if (this.userResult === this.computerResult) {
       this.result = 'There was a tie /draw';
     }
 
     if (this.userResult === 'rock' && this.computerResult === 'paper'){
+      this.results--;
       this.result = 'Computer wins';
     }
 
     if (this.userResult === 'rock' && this.computerResult === 'scissors'){
+      this.results++;
       this.result = 'You win';
     }
 
     if (this.userResult === 'paper' && this.computerResult === 'rock'){
+      this.results++
       this.result = 'You win';
     }
 
     if (this.userResult === 'paper' && this.computerResult === 'scissors'){
+      this.results--;
       this.result = 'Computer wins';
     }
 
     if (this.userResult === 'scissors' && this.computerResult === 'rock'){
+      this.results--;
       this.result = 'Computer wins';
     }
 
     if (this.userResult === 'scissors' && this.computerResult === 'paper'){
+      this.results++;
       this.result = 'You win';
     }
   }
