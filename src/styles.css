@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+@font-face {
+    font-family: Barlow;
+    src: url(\assets\fonts\BarlowSemiCondensed-Medium.ttf) format('truetype');
+}
+
+.Barlow {
+    font-family: Barlow;
+}
+
+.button {     
+    background-color: Transparent !important;
+    background-repeat:no-repeat !important;
+    border: none !important;
+    cursor:pointer !important;
+    overflow: hidden !important;        
+}
