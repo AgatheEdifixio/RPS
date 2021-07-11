@@ -1,8 +1,3 @@
-<br>
-<app-home></app-home>
-
-
-
 
 <br>
 <div class="container">
@@ -54,8 +49,22 @@
 
   <div class="container">
 <div class="row headerOutline Barlow rules">
-<!--       <div class="col-3 Barlow rules headerOutline"> -->
-          RULES
-     <!--  </div> -->
-<!--     </div> -->
+  <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">RULES</button> 
   </div>
+
+    
+<ng-template #mymodal let-modal >
+  <div class="modalabc">
+  <div class="modal-header">
+    <span class="Barlow scoreNumber">RULES</span>
+   <!--  <span aria-hidden="true"> -->
+     <button type="button" (click)="modal.dismiss('Cross click')"   
+     style="background-color: Transparent !important; background-repeat:no-repeat !important; border: none !important;" >
+      <img src="\assets\images\icon-close.svg">
+    </button>
+  </div>
+  <div class="modal-body">
+    <img src="\assets\images\image-rules.svg">
+  </div>
+</div>
+</ng-template>
