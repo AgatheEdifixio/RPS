@@ -1,8 +1,7 @@
 <div class="center-div">
+  <div class="container">
 
-
-  <div class="container a">
-
+    <!-- title and score part -->
     <div class="part1">
       <div class="row headerOutline">
         <div class="col-8">
@@ -19,6 +18,7 @@
       </div>
     </div>
 
+    <!-- choice user -->
     <div class="container resultContainer" align="center" *ngIf="showResult">
       <div class="row Barlow result">
         <div class="col">You picked</div>
@@ -82,11 +82,8 @@
       <button class="btn btn-light Barlow b" (click)="playAgain()">PLAY AGAIN</button>
     </div>
 
-    <br>
-    <!-- gameContainer -->
-
-    <div class="container gameContainer" *ngIf="showGame">
-
+    <!-- result game -->
+    <div class="container gameContainer" align="center" *ngIf="showGame">
       <div class="row">
         <div class="col" align="center">
           <div class="outer-div paper">
@@ -119,35 +116,23 @@
         </div>
       </div>
     </div>
-
     <br>
     <div class="part3">
-      <!-- class="row Barlow rules" -->
-      <div align="right">
-        <button class="btn btn-lg btn-outline-primary rules" (click)="open(mymodal)">RULES</button>
-      </div>
+      <button class="btn btn-lg btn-outline-primary rules" (click)="open(mymodal)">RULES</button>
     </div>
   </div>
 
-
+  <!-- modal rules -->
   <ng-template #mymodal let-modal>
-    <div class="modalabc">
-      <div class="modal-header">
-        <span class="Barlow scoreNumber">RULES</span>
-        <!--  <span aria-hidden="true"> -->
-        <button type="button" (click)="modal.dismiss('Cross click')"
-          style="background-color: Transparent !important; background-repeat:no-repeat !important; border: none !important;">
-          <img src="\assets\images\icon-close.svg">
-        </button>
-      </div>
-      <div class="modal-body">
-        <img src="\assets\images\image-rules.svg">
-      </div>
+    <div class="modal-header">
+      <span class="Barlow scoreNumber">RULES</span>
+      <button type="button" (click)="modal.dismiss('Cross click')"
+        style="background-color: Transparent !important; background-repeat:no-repeat !important; border: none !important;">
+        <img src="\assets\images\icon-close.svg">
+      </button>
+    </div>
+    <div class="modal-body">
+      <img src="\assets\images\image-rules.svg">
     </div>
   </ng-template>
-
-
-
-
-
 </div>

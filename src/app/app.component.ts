@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-  
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -8,14 +7,13 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'rock-paper';
   public computerResult: any; 
   public result: any;
   public results = 0;
   private userResult: any; 
 
-  public userChoosed: String = 'rien';
-  public computerChoosed: String = 'rien';
+  public userChoosed: String = '';
+  public computerChoosed: String = '';
   showResult: Boolean = false;
   showGame: Boolean = true;
 
@@ -29,49 +27,29 @@ export class AppComponent {
 
   closeResult: any;
 
-
-
   constructor(private modalService: NgbModal) {}
 
   open(content: any) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'})
   }
 
-  // clean useless code
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
-
-/*   USER  */
   public play(action: string): void{
     this.userResult = action;
     this.userChoosed = this.userResult;
 
-    if (this.userChoosed == 'rock'){
+   if (this.userChoosed == 'rock'){
       this.resultIsRock = true;
-    }
+   }
     if (this.userChoosed == 'paper'){
       this.resultIsPaper = true;
-    }
+   }
     if (this.userChoosed == 'scissors'){
       this.resultIsScissors = true;
-    }
-
+   }
     this.computer();
     this.calculateWinner();
   }
 
-/*   COMPUTER  */
   private computer():void {
     const randomNumber = Math.floor(Math.random() * 3);
     const options: string[] = ['rock', 'paper', 'scissors'];
@@ -87,39 +65,32 @@ export class AppComponent {
     if (this.computerChoosed == 'scissors'){
       this.resultComputerIsScissors = true;
     }
-
   }
 
   private calculateWinner():void {
     if (this.userResult === this.computerResult) {
       this.result = 'EX AEQUO';
     }
-
     if (this.userResult === 'rock' && this.computerResult === 'paper'){
       this.results--;
       this.result = 'YOU LOSE';
     }
-
     if (this.userResult === 'rock' && this.computerResult === 'scissors'){
       this.results++;
       this.result = 'YOU WIN';
     }
-
     if (this.userResult === 'paper' && this.computerResult === 'rock'){
       this.results++
       this.result = 'YOU WIN';
     }
-
     if (this.userResult === 'paper' && this.computerResult === 'scissors'){
       this.results--;
       this.result = 'YOU LOSE';
     }
-
     if (this.userResult === 'scissors' && this.computerResult === 'rock'){
       this.results--;
       this.result = 'YOU LOSE';
     }
-
     if (this.userResult === 'scissors' && this.computerResult === 'paper'){
       this.results++;
       this.result = 'YOU WIN';
@@ -144,6 +115,4 @@ export class AppComponent {
     this.resultComputerIsPaper = false;
     this.resultComputerIsScissors = false;
   }
-
-
 }

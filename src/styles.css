@@ -1,11 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-html, body
-{
-    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-    height: 100%;
+html, body {
+  background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  height: 100%;
 }
- .center-div
-{
+
+ .center-div {
   position: absolute;
   margin: auto;
   top: 0;
@@ -14,44 +12,30 @@ html, body
   left: 0;
   width: 400px;
   height: 400px;
-/*   background-color: pink; */
   border-radius: 3px;
 } 
 
-
-/* .a{
-    width: fit-content;
-}
- */
-
-
- @font-face {
-    font-family: Barlow;
-    src: url(\assets\fonts\BarlowSemiCondensed-Medium.ttf) format('truetype');
+@font-face {
+  font-family: Barlow;
+  src: url(\assets\fonts\BarlowSemiCondensed-Medium.ttf) format('truetype');
 }
 
 .Barlow {
-    font-family: Barlow;
+  font-family: Barlow;
 }
 
-.button {     
-    background-color: Transparent !important;
-    background-repeat:no-repeat !important;
-    border: none !important;
-    cursor:pointer !important;
-    overflow: hidden !important;        
-}
- 
-
-  @media (max-width: 375px) {
-  
-    .part1 {
-        margin: 10px
-    }
-  
+@media (min-width: 375px) {
+  .part1 {
+    margin: 10px
+  }
+  .part3 {
+    text-align: center;
+  }
 }
 
 @media (min-width: 1366px) {
-/* // implémetner bouton centré  */
+  .part3 {
+    text-align: right;
+  }
 } 
 
