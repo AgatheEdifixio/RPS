@@ -6,6 +6,11 @@
   padding: 10px;
   }
 
+  .gameContainer{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
   .scoreBox{
     border: 3px solid;
     border-color: white;
@@ -75,6 +80,10 @@
 
  .resultBtn{
   margin-top: 20px;
+ }
+
+ .btn-light {
+  color: hsl(229, 64%, 46%);
  }
 
 .modal-body{

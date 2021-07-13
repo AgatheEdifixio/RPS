@@ -9,7 +9,6 @@
           <img src="\assets\images\logo.svg">
         </div>
         <div class="col-4 scoreBox">
-          <!--  // voir si pertinent de fair eune flex box centrée  -->
           <div class="scoreText">
             <span class="Barlow">SCORE</span>
           </div>
@@ -20,7 +19,7 @@
       </div>
     </div>
 
-    <div class="container resultContainer"  align="center" *ngIf="showResult">
+    <div class="container resultContainer" align="center" *ngIf="showResult">
       <div class="row Barlow result">
         <div class="col">You picked</div>
         <div class="col">The house picked </div>
@@ -80,11 +79,13 @@
       </div>
 
       <div class="Barlow result"> {{ result }} </div>
-      <button class="btn btn-light Barlow" (click)="playAgain()">PLAY AGAIN</button>
+      <button class="btn btn-light Barlow b" (click)="playAgain()">PLAY AGAIN</button>
     </div>
 
     <br>
-    <div class="container" *ngIf="showGame">
+    <!-- gameContainer -->
+
+    <div class="container gameContainer" *ngIf="showGame">
 
       <div class="row">
         <div class="col" align="center">

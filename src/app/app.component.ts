@@ -29,9 +29,6 @@ export class AppComponent {
 
   closeResult: any;
 
-/*   imgScissors:any = "rock-paper\src\assets\images\icon-scissors.svg";
-  imgRock: any = "\assets\images\icon-rock.svg"; */
-
 
 
   constructor(private modalService: NgbModal) {}
@@ -95,37 +92,37 @@ export class AppComponent {
 
   private calculateWinner():void {
     if (this.userResult === this.computerResult) {
-      this.result = 'There was a tie /draw';
+      this.result = 'EX AEQUO';
     }
 
     if (this.userResult === 'rock' && this.computerResult === 'paper'){
       this.results--;
-      this.result = 'Computer wins';
+      this.result = 'YOU LOSE';
     }
 
     if (this.userResult === 'rock' && this.computerResult === 'scissors'){
       this.results++;
-      this.result = 'You win';
+      this.result = 'YOU WIN';
     }
 
     if (this.userResult === 'paper' && this.computerResult === 'rock'){
       this.results++
-      this.result = 'You win';
+      this.result = 'YOU WIN';
     }
 
     if (this.userResult === 'paper' && this.computerResult === 'scissors'){
       this.results--;
-      this.result = 'Computer wins';
+      this.result = 'YOU LOSE';
     }
 
     if (this.userResult === 'scissors' && this.computerResult === 'rock'){
       this.results--;
-      this.result = 'Computer wins';
+      this.result = 'YOU LOSE';
     }
 
     if (this.userResult === 'scissors' && this.computerResult === 'paper'){
       this.results++;
-      this.result = 'You win';
+      this.result = 'YOU WIN';
     }
     this.showResult = true;
     this.showGame = false;
