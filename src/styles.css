@@ -1,9 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
-body {
+html, body
+{
     background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    height: 100%;
 }
+ .center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+/*   background-color: pink; */
+  border-radius: 3px;
+} 
 
-@font-face {
+
+/* .a{
+    width: fit-content;
+}
+ */
+
+
+ @font-face {
     font-family: Barlow;
     src: url(\assets\fonts\BarlowSemiCondensed-Medium.ttf) format('truetype');
 }
@@ -19,3 +41,19 @@ body {
     cursor:pointer !important;
     overflow: hidden !important;        
 }
+ 
+
+ @media (max-width: 375px) {
+    .a{
+        width: fit-content;
+        margin: 10px;
+    }
+}
+
+@media (min-width: 1366px) {
+    .a{
+        width: fit-content;
+        margin: auto;
+    }
+} 
+

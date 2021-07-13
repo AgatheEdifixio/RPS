@@ -1,82 +1,83 @@
+
 .headerOutline{
-border: 3px solid;
-border-color: hsl(217, 16%, 45%);
-border-radius: 12px;
-padding: 10px;
-}
+  border: 3px solid;
+  border-color: hsl(217, 16%, 45%);
+  border-radius: 12px;
+  padding: 10px;
+  }
 
+  .scoreBox{
+    border: 3px solid;
+    border-color: white;
+    border-radius: 12px;
+    background-color: white;
+    text-align: center;
+    }
 
-.scoreBox{
-border: 3px solid;
-border-color: white;
-border-radius: 12px;
-background-color: white;
+    .scoreText{
+      color: hsl(229, 64%, 46%);
+      font-weight: 600;
+      }
+      
+    .scoreNumber{
+      color: hsl(229, 64%, 46%);
+     /*  font-size: xxx-large; */
+      font-size: xx-large;
+      font-weight: 700;
+    }
 
-text-align: center;
-}
+    .button {     
+      background-color: Transparent !important;
+      background-repeat:no-repeat !important;
+  }
 
-.scoreText{
-color: hsl(229, 64%, 46%);
-font-weight: 600;
-}
-
-.scoreNumber{
-    color: hsl(229, 64%, 46%);
-   /*  font-size: xxx-large; */
-   font-size: xx-large;
-    font-weight: 700;
-}
-
-/*------------ jeu ----------*/
-
-.circleBase {
-    border-radius: 50%;
-}
-
-.button {     
-    background-color: Transparent !important;
-    background-repeat:no-repeat !important;
-}
-
- .paper{
-    border-radius: 50%;
+  .outer-div {
     width: 100px;
     height: 100px;
-    background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-} 
-
-.rock{
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-} 
-
-.scissors{
-    padding: 30px;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    padding: 20px;
+    background-color: #f3f3f3;
     text-align: center;
     border-radius: 50%;
+  }
+  .inner-div>img {
+    margin: auto;
+    /* width: 100px;
+    height: 100px; */
+    border-radius: 3px;
+  }
+  
+  .paper {
+    background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  } 
+  
+  .rock {
+      background: radial-gradient( hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  } 
+   .scissors {
+     
+    background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  }
+
+
+  .rules{
+    color: white;
+ }
+
+ .resultContainer {
+  margin-top: 20px;
+ }
+
+ .result{
+  color: white;
+  font-size: large;
+  margin: 20px 0px 20px 0px;
 }
 
-.scissors>img {
-    margin: 0 auto;
-    width: 50px;
-    height: 50px;
-    border-radius: 3px;
- } 
-
-
-/* 
- -------rules  */
-
- .rules{
-    color: white;
+ .resultBtn{
+  margin-top: 20px;
  }
 
 .modal-body{
     text-align: center;
+    
 }
-

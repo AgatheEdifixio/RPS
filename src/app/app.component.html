@@ -1,70 +1,152 @@
+<div class="center-div">
 
-<br>
-<div class="container">
-  <div class="row headerOutline">
-    <div class="col-8">
-      <img src="\assets\images\logo.svg">
-    </div>
-    <div class="col-4 scoreBox">
-      <!--  // voir si pertinent de fair eune flex box centrée  -->
-      <div class="scoreText">
-        <span class="Barlow">SCORE</span>
+
+  <div class="container a">
+
+    <div class="part1">
+      <div class="row headerOutline">
+        <div class="col-8">
+          <img src="\assets\images\logo.svg">
+        </div>
+        <div class="col-4 scoreBox">
+          <!--  // voir si pertinent de fair eune flex box centrée  -->
+          <div class="scoreText">
+            <span class="Barlow">SCORE</span>
+          </div>
+          <div class="scoreNumber">
+            <span> {{results}}</span>
+          </div>
+        </div>
       </div>
-      <div class="scoreNumber">
-        <span> {{results}}</span>
+    </div>
+
+    <div class="container resultContainer"  align="center" *ngIf="showResult">
+      <div class="row Barlow result">
+        <div class="col">You picked</div>
+        <div class="col">The house picked </div>
+      </div>
+      <div class="row Barlow result">
+        <div class="col">
+          <span *ngIf="resultIsPaper">
+            <div class="outer-div paper">
+              <div class="inner-div">
+                <img src="\assets\images\icon-paper.svg">
+              </div>
+            </div>
+          </span>
+
+          <span *ngIf="resultIsScissors">
+            <div class="outer-div scissors">
+              <div class="inner-div">
+                <img src="\assets\images\icon-scissors.svg">
+              </div>
+            </div>
+          </span>
+
+          <span *ngIf="resultIsRock">
+            <div class="col outer-div rock">
+              <div class="inner-div">
+                <img src="\assets\images\icon-rock.svg">
+              </div>
+            </div>
+          </span>
+        </div>
+        <div class="col">
+
+          <span *ngIf="resultComputerIsPaper">
+            <div class="outer-div paper">
+              <div class="inner-div">
+                <img src="\assets\images\icon-paper.svg">
+              </div>
+            </div>
+          </span>
+
+          <span *ngIf="resultComputerIsScissors">
+            <div class="outer-div scissors">
+              <div class="inner-div">
+                <img src="\assets\images\icon-scissors.svg">
+              </div>
+            </div>
+          </span>
+
+          <span *ngIf="resultComputerIsRock">
+            <div class="col outer-div rock">
+              <div class="inner-div">
+                <img src="\assets\images\icon-rock.svg">
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="Barlow result"> {{ result }} </div>
+      <button class="btn btn-light Barlow" (click)="playAgain()">PLAY AGAIN</button>
+    </div>
+
+    <br>
+    <div class="container" *ngIf="showGame">
+
+      <div class="row">
+        <div class="col" align="center">
+          <div class="outer-div paper">
+            <div class="inner-div">
+              <button (click)="play('paper')"
+                style="background-color: Transparent !important; background-repeat:no-repeat !important; border: none !important;">
+                <img src="\assets\images\icon-paper.svg">
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col" align="center">
+          <div class="outer-div scissors">
+            <div class="inner-div">
+              <button (click)="play('scissors')"
+                style="background-color: Transparent !important; background-repeat:no-repeat !important; border: none !important;">
+                <img src="\assets\images\icon-scissors.svg"> </button>
+            </div>
+          </div>
+        </div>
+        <div class="col" align="center">
+          <div class="col outer-div rock">
+            <div class="inner-div">
+              <button (click)="play('rock')"
+                style="background-color: Transparent !important; background-repeat:no-repeat !important; border: none !important;">
+                <img src="\assets\images\icon-rock.svg">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="part3">
+      <!-- class="row Barlow rules" -->
+      <div align="right">
+        <button class="btn btn-lg btn-outline-primary rules" (click)="open(mymodal)">RULES</button>
       </div>
     </div>
   </div>
-</div>
-<br>
-<div class="container">
 
-  <div class="row">
-    <div class="col">
-      <div class="paper">
-        <button (click)="play('paper')"
-        style="background-color: Transparent !important; background-repeat:no-repeat !important; border: none !important;">
-          <img src="\assets\images\icon-paper.svg">
+
+  <ng-template #mymodal let-modal>
+    <div class="modalabc">
+      <div class="modal-header">
+        <span class="Barlow scoreNumber">RULES</span>
+        <!--  <span aria-hidden="true"> -->
+        <button type="button" (click)="modal.dismiss('Cross click')"
+          style="background-color: Transparent !important; background-repeat:no-repeat !important; border: none !important;">
+          <img src="\assets\images\icon-close.svg">
         </button>
       </div>
-    </div>
-
-    <div class="col">
-      <div class="scissors">
-        <button (click)="play('scissors')"
-          style="background-color: Transparent !important; background-repeat:no-repeat !important; border: none !important;">
-          <img src="\assets\images\icon-scissors.svg"> </button>
+      <div class="modal-body">
+        <img src="\assets\images\image-rules.svg">
       </div>
     </div>
+  </ng-template>
 
-      <div class="col">
-        <div class="rock">
-          <button (click)="play('rock')"
-          style="background-color: Transparent !important; background-repeat:no-repeat !important; border: none !important;">
-            <img src="\assets\images\icon-rock.svg">
-          </button>         
-        </div>
-    </div>
-  </div>
 
-  <div class="container">
-<div class="row headerOutline Barlow rules">
-  <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">RULES</button> 
-  </div>
 
-    
-<ng-template #mymodal let-modal >
-  <div class="modalabc">
-  <div class="modal-header">
-    <span class="Barlow scoreNumber">RULES</span>
-   <!--  <span aria-hidden="true"> -->
-     <button type="button" (click)="modal.dismiss('Cross click')"   
-     style="background-color: Transparent !important; background-repeat:no-repeat !important; border: none !important;" >
-      <img src="\assets\images\icon-close.svg">
-    </button>
-  </div>
-  <div class="modal-body">
-    <img src="\assets\images\image-rules.svg">
-  </div>
+
+
 </div>
-</ng-template>

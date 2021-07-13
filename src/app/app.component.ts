@@ -14,7 +14,25 @@ export class AppComponent {
   public results = 0;
   private userResult: any; 
 
+  public userChoosed: String = 'rien';
+  public computerChoosed: String = 'rien';
+  showResult: Boolean = false;
+  showGame: Boolean = true;
+
+  resultIsRock : Boolean = false;
+  resultIsPaper: Boolean = false;
+  resultIsScissors: Boolean = false;
+
+  resultComputerIsRock : Boolean = false;
+  resultComputerIsPaper: Boolean = false;
+  resultComputerIsScissors: Boolean = false;
+
   closeResult: any;
+
+/*   imgScissors:any = "rock-paper\src\assets\images\icon-scissors.svg";
+  imgRock: any = "\assets\images\icon-rock.svg"; */
+
+
 
   constructor(private modalService: NgbModal) {}
 
@@ -26,6 +44,7 @@ export class AppComponent {
     });
   }
 
+  // clean useless code
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -36,16 +55,42 @@ export class AppComponent {
     }
   }
 
+/*   USER  */
   public play(action: string): void{
     this.userResult = action;
+    this.userChoosed = this.userResult;
+
+    if (this.userChoosed == 'rock'){
+      this.resultIsRock = true;
+    }
+    if (this.userChoosed == 'paper'){
+      this.resultIsPaper = true;
+    }
+    if (this.userChoosed == 'scissors'){
+      this.resultIsScissors = true;
+    }
+
     this.computer();
     this.calculateWinner();
   }
 
+/*   COMPUTER  */
   private computer():void {
     const randomNumber = Math.floor(Math.random() * 3);
     const options: string[] = ['rock', 'paper', 'scissors'];
     this.computerResult = options[randomNumber];
+    this.computerChoosed = this.computerResult;
+
+    if (this.computerChoosed == 'rock'){
+      this.resultComputerIsRock = true;
+    }
+    if (this.computerChoosed == 'paper'){
+      this.resultComputerIsPaper = true;
+    }
+    if (this.computerChoosed == 'scissors'){
+      this.resultComputerIsScissors = true;
+    }
+
   }
 
   private calculateWinner():void {
@@ -82,6 +127,25 @@ export class AppComponent {
       this.results++;
       this.result = 'You win';
     }
+    this.showResult = true;
+    this.showGame = false;
+  }
+
+
+   playAgain(){
+    this.showGame = true;
+    this.showResult = false;
+    this.clearImg();
+  }
+
+  clearImg(){
+    this.resultIsRock = false;
+    this.resultIsPaper = false;
+    this.resultIsScissors = false;
+  
+    this.resultComputerIsRock = false;
+    this.resultComputerIsPaper = false;
+    this.resultComputerIsScissors = false;
   }
 
 
