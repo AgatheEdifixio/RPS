@@ -17,7 +17,7 @@ To execute the application on your computer, you need to install :
     Angular CLI 
 
 On the first launch use "npm install" 
-the use the command "ng serve" to run the project 
+the use the command "ng serve" to run the project.
  
 # Technical Stack 
 Angular 12 
